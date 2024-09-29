@@ -1,0 +1,94 @@
+<div class="md:w-1/2">
+  <h2 class="font-black text-2xl text-center">Seguimiento pacientes</h2>
+
+  <p class="text-lg mt-5 text-center mb-10">
+    Añade pacientes y <span class="text-violet-600 font-bold">Adminístralos</span>
+  </p>
+
+  <app-alert *ngIf="alertState.message" [alert]="alertState"></app-alert>
+
+  <form
+    [formGroup]="form"
+    (ngSubmit)="validate()"
+    class="bg-gray-200 rounded-lg py-10 px-5 mb-10 mx-5 border shadow-md"
+  >
+    <div class="mb-5">
+      <label for="pet" class="block uppercase font-bold">
+        Nombre mascota
+      </label>
+
+      <input
+        id="pet"
+        type="text"
+        placeholder="Nombre de la mascota"
+        class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md text-black"
+        [value]="name"
+        (input)="updateField($event, 'name')"
+      />
+    </div>
+
+    <div class="mb-5">
+      <label for="property" class="block uppercase font-bold">
+        Nombre propietario
+      </label>
+
+      <input
+        id="property"
+        type="text"
+        placeholder="Nombre del propietario"
+        class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md text-black"
+        [value]="property"
+        (input)="updateField($event, 'property')"
+      />
+    </div>
+
+    <div class="mb-5">
+      <label for="email" class="block uppercase font-bold">
+        Email
+      </label>
+
+      <input
+        id="email"
+        type="email"
+        placeholder="Email"
+        class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md text-black"
+        [value]="email"
+        (input)="updateField($event, 'email')"
+      />
+    </div>
+
+    <div class="mb-5">
+      <label for="date" class="block uppercase font-bold">
+        Alta
+      </label>
+
+      <input
+        id="date"
+        type="date"
+        class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md text-black"
+        [value]="date"
+        (input)="updateField($event, 'date')"
+      />
+    </div>
+
+    <div class="mb-5">
+      <label for="symptoms" class="block uppercase font-bold">
+        Síntomas
+      </label>
+
+      <textarea
+        id="symptoms"
+        placeholder="Describe los síntomas"
+        class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md text-black h-40"
+        [value]="symptoms"
+        (input)="updateField($event, 'symptoms')"
+      ></textarea>
+    </div>
+
+    <input
+      type="submit"
+      class="bg-violet-600 rounded-md w-full p-3 text-white uppercase font-bold hover:bg-violet-700 cursor-pointer transition-colors"
+      [value]="editing ? 'Guardar cambios' : 'Registrar paciente'"
+    />
+  </form>
+</div>
