@@ -1,0 +1,49 @@
+<div class="bg-gray-200 rounded-lg mx-5 my-10 px-5 py-10 border shadow">
+  <p class="font-bold mb-3 uppercase">
+    ID:
+    <span class="font-normal normal-case"> {{ patient.id }} </span>
+  </p>
+
+  <p class="font-bold mb-3 uppercase">
+    Nombre:
+    <span class="font-normal normal-case"> {{ patient.name }} </span>
+  </p>
+
+  <p class="font-bold mb-3 uppercase">
+    Propietario:
+    <span class="font-normal normal-case"> {{ patient.property }} </span>
+  </p>
+
+  <p class="font-bold mb-3 uppercase">
+    Email:
+    <span class="font-normal normal-case"> {{ patient.email }} </span>
+  </p>
+
+  <p class="font-bold mb-3 uppercase">
+    Fecha Alta:
+    <span class="font-normal normal-case"> {{ patient.date }} </span>
+  </p>
+
+  <p class="font-bold mb-3 uppercase">
+    Síntomas:
+    <span class="font-normal normal-case"> {{ patient.symptoms }} </span>
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-5 mt-10">
+    <button
+      type="button"
+      class="block w-full py-2 px-10 text-white bg-violet-600 hover:bg-violet-700 font-bold uppercase rounded-lg"
+      (click)="onUpdatePatient()"
+    >
+      Editar
+    </button>
+
+    <button
+      type="button"
+      class="block w-full py-2 px-10 text-white bg-red-600 hover:bg-red-700 font-bold uppercase rounded-lg"
+      (click)="onDeletePatient()"
+    >
+      Eliminar
+    </button>
+  </div>
+</div>
