@@ -1,0 +1,16 @@
+<h1 class="title">
+  Hello <span class="highlight">{{ title }}!</span>
+</h1>
+
+<div class="button-container">
+  <button (click)="changeTitle()" class="button">
+    Click me!
+  </button>
+</div>
+
+<div class="grid">
+  <app-product
+    *ngFor="let product of products"
+    [product]="product"
+  ></app-product>
+</div>

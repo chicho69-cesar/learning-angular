@@ -1,0 +1,29 @@
+<div class="container">
+  <h4 *ngIf="loading; else loaded">Cargando...</h4>
+
+  <ng-template #loaded>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">service</th>
+          <th scope="col">Horarios</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Detalle</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let service of servicesList">
+          <th scope="row">{{ service?.id }}</th>
+          <td>{{ service?.descripcion }}</td>
+          <td>{{ service?.horarios_atencion }} horarios_atencion</td>
+          <td>{{ service?.usuario?.nombre }} {{ service?.usuario?.apellido }}</td>
+          <td>
+            <button type="button" class="btn btn-outline-primary" (click)="navigate(service!.id)">Detalle</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+</div>

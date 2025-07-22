@@ -1,0 +1,24 @@
+<div>
+  <h2>
+    Lista de tareas
+  </h2>
+
+  <ul>
+    <li *ngFor='let todo of todoList; let i = index'>
+      {{ todo }}
+      <button (click)='deleteTodo(i)'>
+        Eliminar
+      </button>
+    </li>
+  </ul>
+
+  <input
+    type='text'
+    placeholder='Nueva tarea...'
+    [(ngModel)]="newTodo"
+  />
+
+  <button (click)="addTodo()">
+    Agregar
+  </button>
+</div>

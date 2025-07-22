@@ -1,0 +1,22 @@
+<h4 *ngIf="loading; else loaded">Cargando...</h4>
+
+<ng-template #loaded>
+  <div class="container">
+    <h1 *ngIf="error != ''" class="text-danger">{{ error }}</h1>
+
+    <div class="card" style="width: 18rem;">
+      <img src="../../../assets/image.jpg" class="card-img-top" alt="servicio" />
+
+      <div class="card-body">
+        <h5 class="card-title">{{ service?.usuario?.nombre }} {{ service?.usuario?.apellido }}</h5>
+        <p class="card-text">{{ service?.descripcion }}</p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Horario: {{ service?.horarios_atencion }}</li>
+        <li class="list-group-item">Cobertura: {{ service?.radio_cobertura }}</li>
+        <li class="list-group-item">Contacto: {{ service?.usuario?.telefono }}</li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
