@@ -30,6 +30,14 @@ const subscription2 = interval$.subscribe((value) => {
 * 2.- También es un observer
 * 3.- Next, Error y Complete
 */
+
+/* 
+Un Subject es un tipo especial de Observable que permite multicasting,
+es decir, permite que múltiples observadores se suscriban a él y reciban
+los mismos valores emitidos. A diferencia de un Observable estándar, que
+emite valores de forma independiente para cada suscriptor, un Subject
+comparte la misma fuente de datos entre todos sus suscriptores.
+*/
 const subject$ = new Subject<number>();
 const intervalSubscription = interval$.subscribe(subject$);
 
@@ -41,8 +49,14 @@ setTimeout(() => {
   es considerado como un "Cold Observable". Pero cuando la data
   es producida fuera del observable es llamado "Hot Observable" */
 
+  /*
+  Le podemos enviar valores al Subject, y todos los observadores 
+  recibirán el mismo valor. Esto es útil para compartir datos
+  entre múltiples suscriptores.
+  */
   subject$.next(10);
   subject$.complete();
 
+  // Nos desuscribimos del observable original
   intervalSubscription.unsubscribe();
 }, 5500);
