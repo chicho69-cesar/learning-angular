@@ -1,0 +1,13 @@
+<h1>
+  Products Page
+</h1>
+
+<products-price *ngIf="isProductVisible" [price]="currentPrice" />
+
+<button (click)="isProductVisible = !isProductVisible">
+  Toggle Price
+</button>
+
+<button (click)="increasePrice()">
+  +10
+</button>
