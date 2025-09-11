@@ -28,8 +28,19 @@
     "renderice",
     "renderiza",
     "renderizado",
+    "sidemenu",
+    "Sidemenu",
     "sincrona",
     "Swal",
     "titlecase"
-  ]
+  ],
+  "angular-schematics.schematicsDefaultOptions": {
+    "angular-component": {
+      "skipChangeDetectionOnPush": true
+    },
+    "angular-*": {
+      "externalTemplate": true,
+      "inlineStyle": true
+    }
+  }
 }
