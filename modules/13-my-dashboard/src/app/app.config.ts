@@ -1,12 +1,33 @@
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideRouter, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes)
+
+    provideZoneChangeDetection({
+      eventCoalescing: true
+    }),
+
+    provideRouter(
+      routes,
+      withViewTransitions({
+        skipInitialTransition: true,
+        // onViewTransitionCreated( transitionInfo ) {
+        //   console.log({transitionInfo});
+        // },
+      })
+    ),
+
+    provideHttpClient(
+      // withFetch(),
+      withInterceptorsFromDi(),
+    ),
+
+    provideAnimationsAsync(),
   ]
 };
