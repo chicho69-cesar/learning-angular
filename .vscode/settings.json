@@ -9,6 +9,8 @@
     "desuscribimos",
     "desuscribirnos",
     "desuscripción",
+    "dragonball",
+    "Dragonball",
     "gifs",
     "Gifs",
     "Giphy",
@@ -20,6 +22,7 @@
     "microfrontends",
     "milisegundos",
     "nestjs",
+    "postgres",
     "primeng",
     "Redirección",
     "REDIRECCIÓN",
@@ -33,6 +36,7 @@
     "Sidemenu",
     "sincrona",
     "Swal",
+    "Teslo",
     "titlecase"
   ],
   "angular-schematics.schematicsDefaultOptions": {
