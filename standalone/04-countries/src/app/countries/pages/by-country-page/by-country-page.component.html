@@ -1,1 +1,12 @@
-<p>by-country-page.component works!</p>
+<app-search-input
+  (value)="query.set($event)"
+  placeholder="Buscar por país"
+  [initialValue]="query()"
+/>
+
+<app-country-list
+  [countries]="countryResource.value() ?? []"
+  [errorMessage]="countryResource.error()"
+  [isEmpty]="countryResource.value()?.length === 0"
+  [isLoading]="countryResource.isLoading()"
+/>
