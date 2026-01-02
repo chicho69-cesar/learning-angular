@@ -1,8 +1,8 @@
-import { HeroFilterPipePipe } from './hero-filter.pipe';
+import { HeroFilterPipe } from './hero-filter.pipe';
 
-describe('HeroFilterPipePipe', () => {
+describe('HeroFilterPipe', () => {
   it('create an instance', () => {
-    const pipe = new HeroFilterPipePipe();
+    const pipe = new HeroFilterPipe();
     expect(pipe).toBeTruthy();
   });
 });

@@ -1,8 +1,8 @@
-import { HeroTextColorPipePipe } from './hero-text-color.pipe';
+import { HeroTextColorPipe } from './hero-text-color.pipe';
 
-describe('HeroTextColorPipePipe', () => {
+describe('HeroTextColorPipe', () => {
   it('create an instance', () => {
-    const pipe = new HeroTextColorPipePipe();
+    const pipe = new HeroTextColorPipe();
     expect(pipe).toBeTruthy();
   });
 });

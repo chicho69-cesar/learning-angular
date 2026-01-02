@@ -1,8 +1,8 @@
-import { ToggleCasePipePipe } from './toggle-case.pipe';
+import { ToggleCasePipe } from './toggle-case.pipe';
 
-describe('ToggleCasePipePipe', () => {
+describe('ToggleCasePipe', () => {
   it('create an instance', () => {
-    const pipe = new ToggleCasePipePipe();
+    const pipe = new ToggleCasePipe();
     expect(pipe).toBeTruthy();
   });
 });

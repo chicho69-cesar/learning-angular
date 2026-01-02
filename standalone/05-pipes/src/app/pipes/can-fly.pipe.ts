@@ -1,12 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'canFlyPipe'
+  name: 'canFly'
 })
-export class CanFlyPipePipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+export class CanFlyPipe implements PipeTransform {
+  transform(value: boolean): 'Puede volar' | 'No puede volar' {
+    return value ? 'Puede volar' : 'No puede volar';
   }
-
 }

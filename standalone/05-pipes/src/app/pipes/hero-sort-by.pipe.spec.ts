@@ -1,8 +1,8 @@
-import { HeroSortByPipePipe } from './hero-sort-by.pipe';
+import { HeroSortByPipe } from './hero-sort-by.pipe';
 
-describe('HeroSortByPipePipe', () => {
+describe('HeroSortByPipe', () => {
   it('create an instance', () => {
-    const pipe = new HeroSortByPipePipe();
+    const pipe = new HeroSortByPipe();
     expect(pipe).toBeTruthy();
   });
 });

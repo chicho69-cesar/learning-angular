@@ -1,8 +1,8 @@
-import { CanFlyPipePipe } from './can-fly.pipe';
+import { CanFlyPipe } from './can-fly.pipe';
 
-describe('CanFlyPipePipe', () => {
+describe('CanFlyPipe', () => {
   it('create an instance', () => {
-    const pipe = new CanFlyPipePipe();
+    const pipe = new CanFlyPipe();
     expect(pipe).toBeTruthy();
   });
 });
