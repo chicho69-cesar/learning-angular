@@ -1,1 +1,103 @@
-<p>switches-page.component works!</p>
+<h2>Reactivos: Switches</h2>
+<hr />
+
+<form autocomplete="off" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Género</label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <input
+          type="radio"
+          class="form-check-input"
+          value="M"
+          id="maleRadio"
+          formControlName="gender"
+        />
+
+        <label for="maleRadio" class="form-check-label">
+          Masculino
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input
+          type="radio"
+          class="form-check-input"
+          value="F"
+          id="femaleRadio"
+          formControlName="gender"
+        />
+
+        <label for="femaleRadio" class="form-check-label">
+          Femenino
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Notificaciones</label>
+    <div class="col-sm-9">
+      <div class="form-check form-switch mt-2">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          value="M"
+          id="notificationsSwitch"
+          formControlName="wantNotifications"
+        />
+
+        <label for="notificationsSwitch" class="form-check-label">
+          Recibir notificaciones
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Términos y Condiciones</label>
+    <div class="col-sm-9">
+      <div
+        class="form-check form-switch mt-2"
+        [class.text-danger]="formUtils.isValidField(myForm, 'termsAndConditions')"
+      >
+        <input
+          type="checkbox"
+          class="form-check-input"
+          value="M"
+          id="termsAndConditionsSwitch"
+          formControlName="termsAndConditions"
+        />
+
+        <label for="termsAndConditionsSwitch" class="form-check-label">
+          Acepto los términos y condiciones
+        </label>
+      </div>
+
+      @if (formUtils.isValidField(myForm, 'termsAndConditions')) {
+        <span class="form-text text-danger">
+          Debe de aceptar las condiciones de uso
+        </span>
+      }
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary float-end" type="submit">
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>
+
+<h5>Valor del formulario</h5>
+<pre>{{ myForm.value | json }}</pre>
+<br />
+
+<h5>Persona</h5>
+<pre>{{ myForm.controls["gender"].value | json }}</pre>
+<br />
+
+<h5>Valid</h5>
+<pre>{{ myForm.valid | json }}</pre>
