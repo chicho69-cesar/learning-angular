@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
 
-import { privateRouteGuardGuard } from './private-route.guard';
+import { privateRouteGuard } from './private-route.guard';
 
-describe('privateRouteGuardGuard', () => {
+describe('privateRouteGuard', () => {
   const executeGuard: CanActivateFn = (...guardParameters) =>
-      TestBed.runInInjectionContext(() => privateRouteGuardGuard(...guardParameters));
+      TestBed.runInInjectionContext(() => privateRouteGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

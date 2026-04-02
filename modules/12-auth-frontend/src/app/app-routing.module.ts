@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { privateRouteGuardGuard } from './auth/guards/private-route.guard';
-import { publicRouteGuardGuard } from './auth/guards/public-route.guard';
+import { privateRouteGuard } from './auth/guards/private-route.guard';
+import { publicRouteGuard } from './auth/guards/public-route.guard';
 
 const routes: Routes = [
   {
     path: 'auth',
-    canActivate: [publicRouteGuardGuard],
+    canActivate: [publicRouteGuard],
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: 'dashboard',
-    canActivate: [privateRouteGuardGuard],
+    canActivate: [privateRouteGuard],
     loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
