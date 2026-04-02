@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
+
+import { FormUtils } from '../../../utils/form.utils';
 
 @Component({
   selector: 'shared-form-error-label',
@@ -7,5 +10,13 @@ import { Component } from '@angular/core';
   styleUrl: './form-error-label.component.css'
 })
 export class FormErrorLabelComponent {
+  public control = input.required<AbstractControl>();
 
+  public get errorMessage() {
+    const errors: ValidationErrors = this.control().errors || {};
+
+    return this.control().touched && Object.keys(errors).length > 0
+      ? FormUtils.getTextError(errors)
+      : null;
+  }
 }
