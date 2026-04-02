@@ -1,5 +1,11 @@
+import { inject } from '@angular/core';
 import { CanMatchFn } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 
-export const isAdminGuardGuard: CanMatchFn = (route, segments) => {
-  return true;
+import { AuthService } from '../services/auth.service';
+
+export const isAdminGuard: CanMatchFn = async (route, segments) => {
+  const authService = inject(AuthService);
+  await firstValueFrom(authService.checkStatus());
+  return authService.isAdmin();
 };

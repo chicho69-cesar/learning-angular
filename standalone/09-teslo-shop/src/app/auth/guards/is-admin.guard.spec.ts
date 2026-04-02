@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { CanMatchFn } from '@angular/router';
 
-import { isAdminGuardGuard } from './is-admin.guard';
+import { isAdminGuard } from './is-admin.guard';
 
-describe('isAdminGuardGuard', () => {
+describe('isAdminGuard', () => {
   const executeGuard: CanMatchFn = (...guardParameters) =>
-      TestBed.runInInjectionContext(() => isAdminGuardGuard(...guardParameters));
+      TestBed.runInInjectionContext(() => isAdminGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
